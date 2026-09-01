@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Enfield | Demo Website</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #111827;
+        }
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .nav-links a:hover {
+            color: #d4a017;
+        }
+        
+        .hero {
+            height: 800px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            background-image:
+                linear-gradient(
+                    rgba(183, 218, 57, 0.4),
+                    rgba(71, 109, 141, 0.8)
+                ),
+                url("heroimg.jpg");
+
+            background-size: cover;
+            background-position: center;
+        }
+        .hero-content {
+            color: white;
+        }
+        .hero-content h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+        .hero-content h1 span {
+            color: #d4a017;
+        }
+        .hero-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        .hero-button {
+            padding: 13px 30px;
+            border: none;
+            border-radius: 5px;
+            background-color: #d4a017;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .hero-button:hover {
+            background-color: #b8860b;
+        }
+        /* FEATURED BIKES */
+        .bikes-section {
+            text-align: center;
+            padding: 60px 30px;
+        }
+        .bikes-section h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+        .bikes-section > p {
+            color: #666;
+            margin-bottom: 40px;
+        }
+        .bike-cards {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        .bike-card {
+            width: 300px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+        }
+        .bike-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+        }
+        .bike-card img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+        }
+        .bike-content {
+            padding: 25px;
+        }
+        .bike-content h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #222;
+        }
+        .bike-content p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .bike-button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #111827;
+            color: white;
+            cursor: pointer;
+        }
+        .bike-button:hover {
+            background-color: #d4a017;
+        }
+        
+        footer {
+            background-color: #111827;
+            color: #e8eef5;
+            padding: 50px 70px 20px;
+        }
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+        }
+        .footer-column,
+        .social-icons {
+            width: 25%;
+        }
+        .footer-column h3,
+        .social-icons h3 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: #e8f5e9;
+        }
+        .footer-column p {
+            color: #d4dde0;
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 8px 0;
+        }
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+        .footer-column ul li a {
+            text-decoration: none;
+            color: #c8e6c9;
+            font-size: 14px;
+        }
+        .footer-column ul li a:hover {
+            color: #ffffff;
+        }
+        .social-icons {
+            width: 25%;
+        }
+        .social-icons h3 {
+            margin-top: 22px;
+        }
+        .social-icons a {
+            font-size: 22px;
+            margin-right: 15px;
+            text-decoration: none;
+        }
+        .facebook {
+            color: #1877f2;
+        }
+        .twitter {
+            color: #1da1f2;
+        }
+        .instagram {
+            color: #e1306c;
+        }
+        .linkedin {
+            color: #0077b5;
+        }
+        .social-icons a:hover {
+            color: #ffffff;
+        }
+        .footer-bottom {
+            text-align: center;
+            border-top: 4px solid #4a539e;
+            margin-top: 30px;
+            padding-top: 15px;
+            font-size: 13px;
+        }
+        .footer-bottom p {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Royal Enfield</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Bikes</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>
+                Built For The
+                <span>Ride</span>
+            </h1>
+            <p>Discover the spirit of adventure and experience the joy of riding.</p>
+            <button class="hero-button">Explore Bikes</button>
+        </div>
+    </section>
+
+    <section class="bikes-section">
+        <h2>Featured Bikes</h2>
+        <p>Explore some of the most popular Royal Enfield motorcycles.</p>
+        <div class="bike-cards">
+            <div class="bike-card">
+                <img src="royal.jpg" alt="Continental GT 650">
+                <div class="bike-content">
+                    <h3>Continental GT 650</h3>
+                    <p>Engine: 648 cc<br>Power: 47 HP<br>Type: Cafe Racer</p>
+                    <button class="bike-button">View Bike</button>
+                </div>
+            </div>
+
+            <div class="bike-card">
+                <img src="himalayan.jpg" alt="Himalayan 450">
+                <div class="bike-content">
+                    <h3>Himalayan 450</h3>
+                    <p>Engine: 452 cc<br>Power: 40 HP<br>Type: Adventure</p>
+                    <button class="bike-button">View Bike</button>
+                </div>
+            </div>
+
+            <div class="bike-card">
+                <img src="gt.jpg" alt="Classic 350">
+                <div class="bike-content">
+                    <h3>Classic 350</h3>
+                    <p>Engine: 349 cc<br>Power: 20.2 HP<br>Type: Cruiser</p>
+                    <button class="bike-button">View Bike</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Royal Enfield</h3>
+                <p>Discover the spirit of adventure and experience the joy of riding. </p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Bikes</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <p>14th Cross, 9th block</p>
+                <p>Jayanagar, Bengaluru</p>
+                <p>560097</p>
+                <p>080-2345-6789</p>
+            </div>
+            <div class="social-icons">
+                <h3>Follow Us</h3>
+                <div>
+                    <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                    <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Royal Enfield</p>
+        </div>
+    </footer>
+</body>
+</html>
