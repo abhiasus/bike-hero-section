@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Enfield | Shopping Cart</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #111;
+        }
+
+        header {
+            background-color: #10151c;
+            color: white;
+            padding: 25px 80px;
+        }
+
+        header h1 {
+            font-size: 30px;
+        }
+        .container {
+            width: 92%;
+            max-width: 1200px;
+            margin: 40px 300px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        .cart-products {
+            background-color: white;
+            padding: 28px;
+            border-radius: 18px;
+            border: 1px solid #ddd;
+        }
+
+        .cart-products h2 {
+            font-size: 28px;
+            margin-bottom: 25px;
+        }
+
+        .cart-items {
+            display: flex;
+            align-items: center;
+            border: 1px solid #eeebeb;
+            border-radius: 12px;
+            padding: 18px;
+            margin-bottom: 18px;
+            gap: 25px;
+            background-color: white;
+        }
+
+        .product-image {
+            width: 250px;
+            height: 150px;
+            object-fit: contain;
+            border-radius: 10px;
+            background-color: white;
+        }
+
+        .product-details {
+            flex: 1;
+        }
+        .product-details h3 {
+            font-size: 21px;
+            margin-bottom: 8px;
+        }
+
+        .product-details p {
+            color: #e31e24;
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+
+        .price {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .quantity {
+            display: flex;
+            align-items: center;
+            border: 1px solid #bbb;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .quantity button {
+            width: 38px;
+            height: 38px;
+            border: none;
+            background-color: white;
+            color: #e31e24;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .quantity button:hover {
+            background-color: #f5f5f5;
+        }
+
+        .quantity span {
+            width: 35px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .remove-btn {
+            background-color: white;
+            color: #e31e24;
+            border: 1px solid #e31e24;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .remove-btn:hover {
+            background-color: #e31e24;
+            color: white;
+        }
+
+        .continue-shopping {
+            display: block;
+            background-color: #fff5f5;
+            color: #e31e24;
+            text-decoration: none;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .continue-shopping:hover {
+            background-color: #ffe5e5;
+        }
+
+        .order-summary {
+            background-color: #10151c;
+            padding: 28px;
+            border-radius: 18px;
+            height: fit-content;
+            color: white;
+        }
+
+        .order-summary h2 {
+            font-size: 26px;
+            margin-bottom: 28px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .summary-row.total {
+            border-top: 1px solid #777;
+            padding-top: 22px;
+            margin-top: 25px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .summary-row.total span:last-child {
+            color: #e31e24;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            background-color: #e31e24;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 17px;
+            cursor: pointer;
+            margin-top: 25px;
+        }
+
+        .checkout-btn:hover {
+            background-color: #b9151a;
+        }
+
+    </style>
+</head>
+<body>
+    <header><h1>My Shopping Cart</h1>
+    </header>
+    <div class="container">
+        <div class="cart-products">
+            <h2>Cart Items</h2>
+            <div class="cart-items">
+                <img src="royal.jpg" alt="Continental GT 650" class="product-image">
+                <div class="product-details">
+                    <h3>Continental GT 650</h3>
+                    <p>Cafe Racer</p>
+                    <div class="price"> ₹6,50,000 </div>
+                </div>
+                <div class="quantity">
+                    <button>-</button>
+                    <span>1</span>
+                    <button>+</button>
+                </div>
+                <button class="remove-btn"> Remove </button>
+            </div>
+            <div class="cart-items">
+                <img src="himalayan.jpg" alt="Himala ==/xyan 450" class="product-image">
+                <div class="product-details">
+                    <h3>Himalayan 450</h3>
+                    <p>Adventure Bike</p>
+                    <div class="price"> ₹5,50,000 </div>
+                </div>
+                <div class="quantity">
+                    <button>-</button>
+                    <span>1</span>
+                    <button>+</button>
+                </div>
+                <button class="remove-btn"> Remove </button>
+            </div>
+            <div class="cart-items">
+                <img src="gt.jpg" alt="Classic 350" class="product-image">
+                <div class="product-details">
+                    <h3>Classic 350</h3>
+                    <p>Cruiser</p>
+                    <div class="price"> ₹5,00,000 </div>
+                </div>
+                <div class="quantity">
+                    <button>-</button>
+                    <span>1</span>
+                    <button>+</button>
+                </div>
+                <button class="remove-btn"> Remove </button>
+            </div>
+            <a href="index.html" class="continue-shopping"> <-- Continue Shopping </a>
+        </div>
+
+        <div class="order-summary">
+            <h2>Order Summary</h2>
+            <div class="summary-row">
+                <span>Subtotal</span>
+                <span>₹17,00,000</span>
+            </div>
+            <div class="summary-row">
+                <span>Shipping</span>
+                <span>₹10,000</span>
+            </div>
+            <div class="summary-row">
+                <span>Tax</span>
+                <span>₹1,70,000</span>
+            </div>
+            <div class="summary-row total">
+                <span>Total</span>
+                <span>₹18,80,000</span>
+            </div>
+
+            <button class="checkout-btn"> Proceed to checkout </button>
+        </div>
+
+    </div>
+
+</body>
+</html>
